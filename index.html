@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive 90-day DevOps learning curriculum with progress tracking, curated resources, and hands-on labs — 2026 Edition">
+  <title>DevOps 90‑Day Curriculum · Interactive Tracker 2026</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══ TOP NAV ═══ -->
+  <nav class="top-nav">
+    <div class="nav-brand">
+      <div class="nav-logo">D9</div>
+      <span class="nav-title">DevOps 90‑Day Curriculum</span>
+    </div>
+    <div class="nav-actions">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search modules, tools…" autocomplete="off">
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <div class="page-layout">
+    <!-- ═══ SIDEBAR ═══ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section-label">Progress Overview</div>
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-item active" data-target="overview">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Dashboard</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="concept-index">
+          <span class="nav-icon">🔖</span>
+          <span class="nav-label">Concept Index</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section-label">Month 1 — Foundation</div>
+      <ul class="sidebar-nav" id="sidebarMonth1">
+        <li class="sidebar-nav-item" data-target="mod-fundamentals">
+          <span class="nav-icon">🚀</span>
+          <span class="nav-label">DevOps Fundamentals</span>
+          <span class="nav-badge">0/3</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-linux">
+          <span class="nav-icon">🐧</span>
+          <span class="nav-label">Linux & Shell</span>
+          <span class="nav-badge">0/5</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-git">
+          <span class="nav-icon">📦</span>
+          <span class="nav-label">Version Control</span>
+          <span class="nav-badge">0/4</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-programming">
+          <span class="nav-icon">🐍</span>
+          <span class="nav-label">Programming</span>
+          <span class="nav-badge">0/3</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-networking">
+          <span class="nav-icon">🌐</span>
+          <span class="nav-label">Networking</span>
+          <span class="nav-badge">0/5</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section-label">Month 2 — Core Execution</div>
+      <ul class="sidebar-nav" id="sidebarMonth2">
+        <li class="sidebar-nav-item" data-target="mod-cloud">
+          <span class="nav-icon">☁️</span>
+          <span class="nav-label">Cloud (AWS)</span>
+          <span class="nav-badge">0/5</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-docker">
+          <span class="nav-icon">🐳</span>
+          <span class="nav-label">Docker</span>
+          <span class="nav-badge">0/4</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-kubernetes">
+          <span class="nav-icon">☸️</span>
+          <span class="nav-label">Kubernetes</span>
+          <span class="nav-badge">0/5</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-cicd">
+          <span class="nav-icon">🔄</span>
+          <span class="nav-label">CI/CD Pipelines</span>
+          <span class="nav-badge">0/4</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section-label">Month 3 — Advanced</div>
+      <ul class="sidebar-nav" id="sidebarMonth3">
+        <li class="sidebar-nav-item" data-target="mod-iac">
+          <span class="nav-icon">🏗️</span>
+          <span class="nav-label">Infrastructure as Code</span>
+          <span class="nav-badge">0/3</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-monitoring">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Monitoring</span>
+          <span class="nav-badge">0/3</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-devsecops">
+          <span class="nav-icon">🔒</span>
+          <span class="nav-label">DevSecOps</span>
+          <span class="nav-badge">0/3</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-ai">
+          <span class="nav-icon">🤖</span>
+          <span class="nav-label">AI Workflows</span>
+          <span class="nav-badge">0/3</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="mod-capstone">
+          <span class="nav-icon">🎯</span>
+          <span class="nav-label">Capstone Project</span>
+          <span class="nav-badge">0/1</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section-label">Resources</div>
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-item" data-target="certifications">
+          <span class="nav-icon">📜</span>
+          <span class="nav-label">Certifications</span>
+        </li>
+        <li class="sidebar-nav-item" data-target="takeaways">
+          <span class="nav-icon">💡</span>
+          <span class="nav-label">Key Takeaways</span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- ═══ MAIN ═══ -->
+    <main class="main-content">
+
+      <!-- Header -->
+      <div class="page-header" id="overview">
+        <h1>DevOps 90‑Day Curriculum</h1>
+        <p class="subtitle">Master DevOps through structured, hands-on learning — from fundamentals to production-ready skills.</p>
+
+        <div class="stats-bar">
+          <div class="stat-card"><span class="stat-value" id="daysCompleted">0</span><span class="stat-label">Days Done</span></div>
+          <div class="stat-card"><span class="stat-value" id="totalDays">90</span><span class="stat-label">Total Days</span></div>
+          <div class="stat-card"><span class="stat-value" id="modulesCompleted">0</span><span class="stat-label">Modules</span></div>
+          <div class="stat-card"><span class="stat-value" id="percentComplete">0%</span><span class="stat-label">Complete</span></div>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-bar"><div class="progress-fill" id="overallFill" style="width:0%"></div></div>
+        </div>
+      </div>
+
+      <!-- ═══ CONCEPT INDEX ═══ -->
+      <h2 class="section-title" id="concept-index"><span class="icon">🔖</span> Concept Index</h2>
+      <div class="table-wrap reveal">
+        <table class="concept-table">
+          <thead><tr><th>#</th><th>Module</th><th>Core Concepts</th><th>Tools</th><th>Days</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td class="module-name">DevOps Fundamentals</td><td>CALMS, lifecycle, collaboration</td><td><span class="tool-pill">—</span></td><td>3</td></tr>
+            <tr><td>2</td><td class="module-name">Linux & Shell Scripting</td><td>Filesystem, processes, Bash</td><td><span class="tool-pill">Ubuntu</span><span class="tool-pill">Bash</span></td><td>10</td></tr>
+            <tr><td>3</td><td class="module-name">Version Control</td><td>Branching, PR workflows</td><td><span class="tool-pill">Git</span><span class="tool-pill">GitHub</span></td><td>5</td></tr>
+            <tr><td>4</td><td class="module-name">Programming Automation</td><td>Infra scripts, API integration</td><td><span class="tool-pill">Python</span><span class="tool-pill">Go</span></td><td>7</td></tr>
+            <tr><td>5</td><td class="module-name">Computer Networking</td><td>TCP/IP, DNS, HTTP</td><td><span class="tool-pill">curl</span><span class="tool-pill">tcpdump</span></td><td>5</td></tr>
+            <tr><td>6</td><td class="module-name">Cloud Computing</td><td>IaaS, compute, IAM</td><td><span class="tool-pill">AWS</span></td><td>10</td></tr>
+            <tr><td>7</td><td class="module-name">Containerization</td><td>Dockerfile, compose</td><td><span class="tool-pill">Docker</span></td><td>7</td></tr>
+            <tr><td>8</td><td class="module-name">Orchestration (K8s)</td><td>Pods, services, Helm</td><td><span class="tool-pill">Kubernetes</span><span class="tool-pill">Helm</span></td><td>10</td></tr>
+            <tr><td>9</td><td class="module-name">CI/CD Pipelines</td><td>CI/CD, GitOps</td><td><span class="tool-pill">GitHub Actions</span><span class="tool-pill">ArgoCD</span></td><td>8</td></tr>
+            <tr><td>10</td><td class="module-name">Infrastructure as Code</td><td>Declarative, state</td><td><span class="tool-pill">Terraform</span><span class="tool-pill">Ansible</span></td><td>7</td></tr>
+            <tr><td>11</td><td class="module-name">Monitoring & Observability</td><td>Metrics, logs, traces</td><td><span class="tool-pill">Prometheus</span><span class="tool-pill">Grafana</span></td><td>5</td></tr>
+            <tr><td>12</td><td class="module-name">DevSecOps</td><td>SAST, secrets, policy</td><td><span class="tool-pill">Trivy</span><span class="tool-pill">Vault</span></td><td>5</td></tr>
+            <tr><td>13</td><td class="module-name">AI‑Augmented Workflows</td><td>AI troubleshooting</td><td><span class="tool-pill">Copilot</span><span class="tool-pill">Claude</span></td><td>3</td></tr>
+            <tr><td>14</td><td class="module-name">Capstone Project</td><td>End‑to‑end pipeline</td><td><span class="tool-pill">Full Stack</span></td><td>5</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ MONTH 1 ═══ -->
+      <h2 class="section-title"><span class="icon">🗓️</span> Month 1 — Foundation <span class="month-progress-mini" id="m1Progress">0/30</span></h2>
+      <div class="month-block" id="month1">
+
+        <div class="module-card reveal" data-module="fundamentals" id="mod-fundamentals">
+          <h3>🚀 DevOps Fundamentals & Culture</h3>
+          <p class="module-desc">CALMS framework, DevOps lifecycle, mindset & collaboration</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="day1">Day 1</span>
+            <span class="day-badge" data-day="day2">Day 2</span>
+            <span class="day-badge" data-day="day3">Day 3</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="linux" id="mod-linux">
+          <h3>🐧 Linux & Shell Scripting</h3>
+          <p class="module-desc">Filesystem hierarchy, processes, permissions, Bash scripting</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="linux-basics">Days 4‑5</span>
+            <span class="day-badge" data-day="linux-process">Days 6‑7</span>
+            <span class="day-badge" data-day="linux-net">Days 8‑9</span>
+            <span class="day-badge" data-day="bash-script">Days 10‑11</span>
+            <span class="day-badge" data-day="bash-practice">Days 12‑13</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="git" id="mod-git">
+          <h3>📦 Version Control</h3>
+          <p class="module-desc">Git internals, branching strategies, PRs, GitOps patterns</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="git-basics">Days 14‑15</span>
+            <span class="day-badge" data-day="git-branch">Day 16</span>
+            <span class="day-badge" data-day="git-collab">Day 17</span>
+            <span class="day-badge" data-day="git-infra">Day 18</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="programming" id="mod-programming">
+          <h3>🐍 Programming Automation</h3>
+          <p class="module-desc">Python & Go for infrastructure scripts and API integration</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="python-basics">Days 19‑21</span>
+            <span class="day-badge" data-day="python-devops">Days 22‑23</span>
+            <span class="day-badge" data-day="go-intro">Days 24‑25</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="networking" id="mod-networking">
+          <h3>🌐 Computer Networking</h3>
+          <p class="module-desc">OSI/TCP‑IP, DNS, HTTP, load balancers, cloud networking</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="net-osi">Day 26</span>
+            <span class="day-badge" data-day="net-dns">Day 27</span>
+            <span class="day-badge" data-day="net-lb">Day 28</span>
+            <span class="day-badge" data-day="net-trouble">Day 29</span>
+            <span class="day-badge" data-day="net-cloud">Day 30</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ MONTH 2 ═══ -->
+      <h2 class="section-title"><span class="icon">☁️</span> Month 2 — Core Execution <span class="month-progress-mini" id="m2Progress">0/35</span></h2>
+      <div class="month-block" id="month2">
+
+        <div class="module-card reveal" data-module="cloud" id="mod-cloud">
+          <h3>☁️ Cloud Computing (AWS)</h3>
+          <p class="module-desc">IAM, EC2, S3, Lambda, RDS, CloudFormation, cost management</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="cloud-fund">Days 31‑32</span>
+            <span class="day-badge" data-day="aws-core">Days 33‑34</span>
+            <span class="day-badge" data-day="aws-serverless">Days 35‑36</span>
+            <span class="day-badge" data-day="cfn">Days 37‑38</span>
+            <span class="day-badge" data-day="aws-cost">Days 39‑40</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="docker" id="mod-docker">
+          <h3>🐳 Containerization (Docker)</h3>
+          <p class="module-desc">Docker CLI, Dockerfile best practices, Compose, multi‑stage builds</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="docker-cli">Days 41‑42</span>
+            <span class="day-badge" data-day="dockerfile">Days 43‑44</span>
+            <span class="day-badge" data-day="compose">Day 45</span>
+            <span class="day-badge" data-day="docker-proj">Days 46‑47</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="kubernetes" id="mod-kubernetes">
+          <h3>☸️ Orchestration (Kubernetes)</h3>
+          <p class="module-desc">Architecture, Pods, Services, Deployments, Ingress, Helm, projects</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="k8s-arch">Days 48‑49</span>
+            <span class="day-badge" data-day="k8s-obj">Days 50‑51</span>
+            <span class="day-badge" data-day="k8s-net">Days 52‑53</span>
+            <span class="day-badge" data-day="helm">Days 54‑55</span>
+            <span class="day-badge" data-day="k8s-proj">Days 56‑57</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="cicd" id="mod-cicd">
+          <h3>🔄 CI/CD Pipelines</h3>
+          <p class="module-desc">CI/CD concepts, GitHub Actions, ArgoCD GitOps, deployment strategies</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="cicd-concepts">Days 58‑59</span>
+            <span class="day-badge" data-day="gha">Days 60‑62</span>
+            <span class="day-badge" data-day="argocd">Days 63‑64</span>
+            <span class="day-badge" data-day="cicd-opt">Day 65</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ MONTH 3 ═══ -->
+      <h2 class="section-title"><span class="icon">⚙️</span> Month 3 — Advanced & Job‑Ready <span class="month-progress-mini" id="m3Progress">0/25</span></h2>
+      <div class="month-block" id="month3">
+
+        <div class="module-card reveal" data-module="iac" id="mod-iac">
+          <h3>🏗️ Infrastructure as Code</h3>
+          <p class="module-desc">Terraform provisioning, Ansible configuration, IaC project</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="tf">Days 66‑68</span>
+            <span class="day-badge" data-day="ansible">Days 69‑70</span>
+            <span class="day-badge" data-day="iac-proj">Days 71‑72</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="monitoring" id="mod-monitoring">
+          <h3>📊 Monitoring & Observability</h3>
+          <p class="module-desc">Prometheus metrics, Grafana dashboards, Loki log aggregation</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="prom">Days 73‑74</span>
+            <span class="day-badge" data-day="grafana">Day 75</span>
+            <span class="day-badge" data-day="loki">Days 76‑77</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="devsecops" id="mod-devsecops">
+          <h3>🔒 DevSecOps</h3>
+          <p class="module-desc">Container scanning, secrets management, policy as code</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="sec-scan">Days 78‑79</span>
+            <span class="day-badge" data-day="vault">Day 80</span>
+            <span class="day-badge" data-day="policy">Days 81‑82</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="ai" id="mod-ai">
+          <h3>🤖 AI‑Augmented Workflows</h3>
+          <p class="module-desc">AI copilots, AI‑assisted infrastructure, pipeline optimization</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="ai-copilot">Day 83</span>
+            <span class="day-badge" data-day="ai-infra">Day 84</span>
+            <span class="day-badge" data-day="ai-opt">Day 85</span>
+          </div>
+        </div>
+
+        <div class="module-card reveal" data-module="capstone" id="mod-capstone">
+          <h3>🎯 Capstone Project</h3>
+          <p class="module-desc">End‑to‑end pipeline: Terraform → K8s → CI/CD → Monitoring</p>
+          <div class="module-progress-bar"><div class="module-progress-fill" style="width:0%"></div></div>
+          <div class="days-row">
+            <span class="day-badge" data-day="capstone">Days 86‑90</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ CERTIFICATIONS ═══ -->
+      <h2 class="section-title" id="certifications"><span class="icon">📜</span> Recommended Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert-card reveal"><strong>AWS Solutions Architect</strong><span>After cloud module (Day 40)</span></div>
+        <div class="cert-card reveal"><strong>CKA (Kubernetes)</strong><span>After K8s deep dive (Day 57)</span></div>
+        <div class="cert-card reveal"><strong>Terraform Associate</strong><span>After IaC module (Day 72)</span></div>
+        <div class="cert-card reveal"><strong>GitHub Actions</strong><span>After CI/CD module (Day 65)</span></div>
+      </div>
+
+      <!-- ═══ TAKEAWAYS ═══ -->
+      <h2 class="section-title" id="takeaways"><span class="icon">💡</span> 2026 Takeaways</h2>
+      <div class="takeaway-grid">
+        <div class="takeaway-card reveal">🔧 Fundamentals first</div>
+        <div class="takeaway-card reveal">📦 One solid stack</div>
+        <div class="takeaway-card reveal">🧩 Think in layers</div>
+        <div class="takeaway-card reveal">🤖 AI as multiplier</div>
+        <div class="takeaway-card reveal">🔒 Security from day 1</div>
+        <div class="takeaway-card reveal">📊 Observe everything</div>
+      </div>
+
+      <footer>
+        Click any day badge for deep‑dive resources · Progress saves automatically to your browser ·
+        <a href="https://roadmap.sh/devops" target="_blank" rel="noopener">roadmap.sh/devops</a>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ═══ MODAL ═══ -->
+  <div class="modal-overlay" id="dayModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">📘 Deep‑dive Resources</h3>
+        <button class="modal-close" id="closeModalBtn" title="Close (Esc)">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <p>Click a day badge to load curated articles, diagrams, and labs.</p>
+      </div>
+      <div class="modal-footer">
+        <div>
+          <button class="btn btn-nav" id="prevDayBtn">← Prev</button>
+          <button class="btn btn-nav" id="nextDayBtn">Next →</button>
+        </div>
+        <button class="btn btn-complete" id="markCompleteBtn">✓ Mark Complete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
