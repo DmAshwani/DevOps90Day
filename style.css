@@ -308,6 +308,61 @@ body {
   margin: 0.75rem 1.25rem;
 }
 
+/* ── Sidebar Collapsible Sections ── */
+.sidebar-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  user-select: none;
+  border-radius: var(--radius-sm);
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  padding: 0.6rem 0.5rem !important;
+  transition: background var(--ease), color var(--ease);
+}
+
+.sidebar-toggle:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.toggle-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-faint);
+  transition: transform 0.25s ease, color 0.2s ease;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.sidebar-toggle:hover .toggle-chevron {
+  color: var(--accent-primary);
+}
+
+.sidebar-toggle.expanded .toggle-chevron {
+  transform: rotate(90deg);
+  color: var(--accent-primary);
+}
+
+.sidebar-nav.collapsible {
+  overflow: hidden;
+  max-height: 500px;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.sidebar-nav.collapsible.collapsed {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* ── Main Content ── */
 .main-content {
   flex: 1;
@@ -417,6 +472,12 @@ body {
   padding-bottom: 0.6rem;
   border-bottom: 2px solid var(--border-default);
   letter-spacing: -0.01em;
+  scroll-margin-top: 80px; /* Account for 56px header + 24px padding */
+}
+
+/* Ensure any target ID has a margin when scrolled to */
+[id] {
+  scroll-margin-top: 80px;
 }
 
 .section-title .icon {

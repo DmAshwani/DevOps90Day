@@ -1410,7 +1410,14 @@
       const targetId = item.getAttribute('data-target');
       const target = document.getElementById(targetId);
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const headerOffset = 70;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
       }
 
       // Update active state
@@ -1630,6 +1637,38 @@
   document.querySelectorAll('.reveal').forEach((el, i) => {
     el.style.transitionDelay = (i * 0.03) + 's';
     revealObserver.observe(el);
+  });
+
+  // ═══════════════════════════════════════════════
+  //  SIDEBAR COLLAPSIBLE SECTIONS
+  // ═══════════════════════════════════════════════
+  document.querySelectorAll('.sidebar-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const targetId = toggle.getAttribute('data-collapse');
+      const targetUl = document.getElementById(targetId);
+      if (!targetUl) return;
+
+      const isCollapsed = targetUl.classList.contains('collapsed');
+      if (isCollapsed) {
+        targetUl.classList.remove('collapsed');
+        toggle.classList.add('expanded');
+      } else {
+        targetUl.classList.add('collapsed');
+        toggle.classList.remove('expanded');
+      }
+    });
+  });
+
+  // Auto-expand the section when a sidebar nav item is clicked
+  document.querySelectorAll('.sidebar-nav-item[data-target]').forEach(item => {
+    item.addEventListener('click', () => {
+      const parentUl = item.closest('.sidebar-nav.collapsible');
+      if (parentUl && parentUl.classList.contains('collapsed')) {
+        parentUl.classList.remove('collapsed');
+        const toggle = document.querySelector(`[data-collapse="${parentUl.id}"]`);
+        if (toggle) toggle.classList.add('expanded');
+      }
+    });
   });
 
   // ═══════════════════════════════════════════════
